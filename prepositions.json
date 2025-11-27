@@ -44,7 +44,55 @@
     "plan": {
         "on": "They plan on attending the conference."
     },
-    "insited": {
+    "insisted": {
         "on": "He insisted on paying for the meal."
+    },
+    "proud": {
+        "of": "She is proud of her achievements."
+    },
+    "angry": {
+        "with": "He is angry with his colleagues about the decision."
+    },
+    "confused": {
+        "about": "I am confused about the instructions."
+    },
+    "grateful": {
+        "for": "We are grateful for your help."
+    },
+    "jealous": {
+        "of": "She is jealous of her friend's success."
+    },
+    "familiar": {
+        "with": "He is familiar with the software."
+    },
+    "surprised": {
+        "at": "They were surprised at the results."
+    },
+    "disappointed": {
+        "with": "I am disappointed with the service."
+    },
+    "fond": {
+        "of": "She is fond of classical music."
+    },
+    "capable": {
+        "of": "He is capable of solving complex problems."
+    },
+    "aware": {
+        "of": "They are aware of the risks."
+    },
+    "thinking": {
+        "about": "I am thinking about changing my career."
+    },
+    "apologize": {
+        "for": "She apologized for her mistake."
+    },
+    "depend": {
+        "on": "Success depends on hard work."
+    },
+    "succeed": {
+        "in": "He succeeded in passing the exam."
+    },
+    "complain": {
+        "about": "They complained about the noise."
     }
 }

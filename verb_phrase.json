@@ -114,5 +114,85 @@
     "hate": {
         "gerund": "They hate cleaning the house.",
         "infinitive": "I hate to interrupt."
+    },
+    "prefer": {
+        "gerund": "I prefer working in the morning.",
+        "infinitive": "She prefers to work alone."
+    },
+    "try": {
+        "gerund": "He tried calling her several times.",
+        "infinitive": "They tried to fix the problem."
+    },
+    "stop": {
+        "gerund": "Please stop making noise.",
+        "infinitive": "We stopped to rest for a while."
+    },
+    "remember": {
+        "gerund": "I remember visiting that place as a child.",
+        "infinitive": "Remember to lock the door."
+    },
+    "forget": {
+        "gerund": "I'll never forget meeting you.",
+        "infinitive": "Don't forget to call me."
+    },
+    "regret": {
+        "gerund": "She regrets quitting her job.",
+        "infinitive": "We regret to inform you of the cancellation."
+    },
+    "suggest": {
+        "gerund": "He suggested taking a different route.",
+        "infinitive": null
+    },
+    "mind": {
+        "gerund": "Do you mind opening the window?",
+        "infinitive": null
+    },
+    "miss": {
+        "gerund": "I miss spending time with my family.",
+        "infinitive": null
+    },
+    "admit": {
+        "gerund": "He admitted making a mistake.",
+        "infinitive": null
+    },
+    "imagine": {
+        "gerund": "Can you imagine living in another country?",
+        "infinitive": null
+    },
+    "recommend": {
+        "gerund": "I recommend trying the new restaurant.",
+        "infinitive": null
+    },
+    "refuse": {
+        "gerund": null,
+        "infinitive": "She refused to answer the question."
+    },
+    "manage": {
+        "gerund": null,
+        "infinitive": "He managed to solve the problem."
+    },
+    "hope": {
+        "gerund": null,
+        "infinitive": "We hope to see you soon."
+    },
+    "intend": {
+        "gerund": null,
+        "infinitive": "I intend to finish this today."
+    },
+    "deserve": {
+        "gerund": null,
+        "infinitive": "You deserve to be happy."
+    },
+    "afford": {
+        "gerund": null,
+        "infinitive": "They can't afford to buy a new car."
+    },
+    "appear": {
+        "gerund": null,
+        "infinitive": "She appears to be confident."
+    },
+    "pretend": {
+        "gerund": null,
+        "infinitive": "He pretended to be asleep."
     }
 }

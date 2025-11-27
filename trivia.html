@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English Verb Trivia Game</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            max-width: 600px;
+            width: 100%;
+            padding: 40px;
+        }
+
+        h1 {
+            color: #667eea;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2em;
+        }
+
+        .mode-selector {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+
+        .mode-btn {
+            flex: 1;
+            padding: 15px;
+            border: 2px solid #667eea;
+            background: white;
+            color: #667eea;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+
+        .mode-btn.active {
+            background: #667eea;
+            color: white;
+        }
+
+        .mode-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .score {
+            text-align: center;
+            font-size: 1.2em;
+            margin-bottom: 20px;
+            color: #555;
+        }
+
+        .question-card {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 25px;
+        }
+
+        .verb-display {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #667eea;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .options {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .options.three-columns {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+
+        .option-btn {
+            padding: 15px;
+            border: 2px solid #ddd;
+            background: white;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+
+        .option-btn:hover:not(:disabled) {
+            border-color: #667eea;
+            transform: scale(1.05);
+        }
+
+        .option-btn.correct {
+            background: #4caf50;
+            color: white;
+            border-color: #4caf50;
+        }
+
+        .option-btn.wrong {
+            background: #f44336;
+            color: white;
+            border-color: #f44336;
+        }
+
+        .option-btn:disabled {
+            cursor: not-allowed;
+        }
+
+        .example {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+            display: none;
+        }
+
+        .example.show {
+            display: block;
+            animation: slideDown 0.3s ease;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .example-title {
+            font-weight: bold;
+            color: #856404;
+            margin-bottom: 8px;
+        }
+
+        .example-text {
+            color: #856404;
+            font-style: italic;
+            white-space: pre-line;
+        }
+
+        .next-btn {
+            width: 100%;
+            padding: 15px;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: none;
+        }
+
+        .next-btn.show {
+            display: block;
+        }
+
+        .next-btn:hover {
+            background: #5568d3;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .feedback {
+            text-align: center;
+            font-size: 1.2em;
+            font-weight: bold;
+            margin: 15px 0;
+            min-height: 30px;
+        }
+
+        .feedback.correct {
+            color: #4caf50;
+        }
+
+        .feedback.wrong {
+            color: #f44336;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎯 English Verb Trivia</h1>
+
+        <div class="mode-selector">
+            <button class="mode-btn active" data-mode="prepositions">Prepositions</button>
+            <button class="mode-btn" data-mode="verb-phrase">Verb Phrase</button>
+        </div>
+
+        <div class="score">
+            Score: <span id="correct">0</span> / <span id="total">0</span>
+        </div>
+
+        <div class="question-card">
+            <div class="verb-display" id="verb"></div>
+            <div class="options" id="options"></div>
+            <div class="feedback" id="feedback"></div>
+            <div class="example" id="example">
+                <div class="example-title">Example:</div>
+                <div class="example-text" id="example-text"></div>
+            </div>
+        </div>
+
+        <button class="next-btn" id="next-btn">Next Question</button>
+    </div>
+
+    <script>
+        // Embedded data to avoid CORS issues
+        const prepositionsData = {"feels":{"like":"It feels like a good day to go for a walk."},"worried":{"about":"She is worried about the upcoming exam."},"responsible":{"for":"He is responsible for managing the team."},"nervous":{"about":"They are nervous about the presentation."},"afraid":{"of":"I am afraid of spiders."},"forgive":{"for":"Please forgive me for being late."},"dream":{"of":"She dreams of traveling the world."},"believe":{"in":"He believes in working hard to achieve success."},"good":{"at":"She is good at playing chess."},"excited":{"about":"They are excited about the upcoming trip."},"looking forward":{"to":"I am looking forward to meeting you."},"interested":{"in":"He is interested in learning new languages."},"tired":{"of":"She is tired of waiting."},"planning":{"on":"We are planning on starting a new project."},"plan":{"on":"They plan on attending the conference."},"insited":{"on":"He insisted on paying for the meal."}};
+
+        const verbPhraseData = {"plan":{"gerund":"I plan going to the party.","infinitive":"I plan to go to the party."},"practice":{"gerund":"She practices playing the piano every day.","infinitive":null},"dislike":{"gerund":"They dislike waiting in long lines.","infinitive":null},"decide":{"gerund":null,"infinitive":"We decided to take a trip to the mountains."},"enjoy":{"gerund":"He enjoys hiking on weekends.","infinitive":null},"postpone":{"gerund":"The meeting was postponed being held until next week.","infinitive":null},"learn":{"gerund":null,"infinitive":"She is learning to play the guitar."},"avoid":{"gerund":"He avoids eating junk food.","infinitive":null},"come":{"gerund":null,"infinitive":"They came to see the new movie."},"continue":{"gerund":"She continued working despite the noise.","infinitive":"He continued to explain his point."},"expect":{"gerund":null,"infinitive":"I expect to finish the project by Friday."},"advise":{"gerund":"She advised taking the earlier train.","infinitive":null},"would like":{"gerund":null,"infinitive":"I would like to visit Paris someday."},"finish":{"gerund":"They finished reading the book last night.","infinitive":null},"love":{"gerund":"He loves swimming in the ocean.","infinitive":"I love to dance."},"can't stand":{"gerund":"She can't stand waiting in traffic.","infinitive":"I can't stand to be late."},"deny":{"gerund":"He denied stealing the money.","infinitive":null},"promise":{"gerund":null,"infinitive":"They promised to help us move."},"begin":{"gerund":"She began singing when she was a child.","infinitive":"He began to understand the problem."},"start":{"gerund":"They started working on the project early.","infinitive":"I started to learn Spanish last year."},"want":{"gerund":null,"infinitive":"She wants to become a doctor."},"consider":{"gerund":"He is considering moving to a new city.","infinitive":null},"need":{"gerund":null,"infinitive":"You need to finish your homework."},"ask":{"gerund":null,"infinitive":"I asked to leave early."},"offer":{"gerund":null,"infinitive":"They offered to help with the preparations."},"agree":{"gerund":null,"infinitive":"We agreed to meet at noon."},"like":{"gerund":"She likes reading historical novels.","infinitive":"He likes to play chess."},"wish":{"gerund":null,"infinitive":"I wish to speak with the manager."},"hate":{"gerund":"They hate cleaning the house.","infinitive":"I hate to interrupt."}};
+
+        let currentMode = 'prepositions';
+        let currentVerb = '';
+        let currentAnswer = '';
+        let score = { correct: 0, total: 0 };
+        let answeredCorrectly = { prepositions: new Set(), 'verb-phrase': new Set() };
+
+        // Load JSON data
+        function loadData() {
+            startNewQuestion();
+        }
+
+        // Get random item from object
+        function getRandomKey(obj) {
+            const keys = Object.keys(obj);
+            return keys[Math.floor(Math.random() * keys.length)];
+        }
+
+        // Generate wrong options
+        function generateOptions(correctAnswer, allOptions) {
+            const options = [correctAnswer];
+            const available = allOptions.filter(opt => opt !== correctAnswer);
+
+            while (options.length < 4 && available.length > 0) {
+                const idx = Math.floor(Math.random() * available.length);
+                options.push(available.splice(idx, 1)[0]);
+            }
+
+            return options.sort(() => Math.random() - 0.5);
+        }
+
+        // Start new question
+        function startNewQuestion() {
+            document.getElementById('feedback').textContent = '';
+            document.getElementById('feedback').className = 'feedback';
+            document.getElementById('example').classList.remove('show');
+            document.getElementById('next-btn').classList.remove('show');
+
+            if (currentMode === 'prepositions') {
+                loadPrepositionQuestion();
+            } else {
+                loadVerbPhraseQuestion();
+            }
+        }
+
+        // Load preposition question
+        function loadPrepositionQuestion() {
+            // Filter out verbs that were answered correctly
+            const availableVerbs = Object.keys(prepositionsData).filter(
+                verb => !answeredCorrectly.prepositions.has(verb)
+            );
+
+            // If all verbs answered correctly, reset the list
+            if (availableVerbs.length === 0) {
+                answeredCorrectly.prepositions.clear();
+                currentVerb = getRandomKey(prepositionsData);
+            } else {
+                currentVerb = availableVerbs[Math.floor(Math.random() * availableVerbs.length)];
+            }
+
+            currentAnswer = Object.keys(prepositionsData[currentVerb])[0];
+
+            const allPrepositions = [...new Set(
+                Object.values(prepositionsData).flatMap(v => Object.keys(v))
+            )];
+
+            const options = generateOptions(currentAnswer, allPrepositions);
+
+            document.getElementById('verb').textContent = currentVerb;
+            renderOptions(options);
+        }
+
+        // Load verb phrase question
+        function loadVerbPhraseQuestion() {
+            // Filter out verbs that were answered correctly
+            const availableVerbs = Object.keys(verbPhraseData).filter(
+                verb => !answeredCorrectly['verb-phrase'].has(verb)
+            );
+
+            // If all verbs answered correctly, reset the list
+            if (availableVerbs.length === 0) {
+                answeredCorrectly['verb-phrase'].clear();
+                currentVerb = getRandomKey(verbPhraseData);
+            } else {
+                currentVerb = availableVerbs[Math.floor(Math.random() * availableVerbs.length)];
+            }
+
+            const verbData = verbPhraseData[currentVerb];
+
+            // Determine which forms are valid
+            const validForms = [];
+            if (verbData.gerund) validForms.push('gerund');
+            if (verbData.infinitive) validForms.push('infinitive');
+
+            // Set the correct answer
+            if (validForms.length === 2) {
+                currentAnswer = 'both';
+            } else {
+                currentAnswer = validForms[0];
+            }
+
+            const options = ['gerund', 'infinitive', 'both'];
+
+            document.getElementById('verb').textContent = currentVerb;
+            renderOptions(options);
+        }
+
+        // Render option buttons
+        function renderOptions(options) {
+            const optionsDiv = document.getElementById('options');
+            optionsDiv.innerHTML = '';
+
+            // Add three-columns class for verb phrase mode
+            if (options.length === 3) {
+                optionsDiv.classList.add('three-columns');
+            } else {
+                optionsDiv.classList.remove('three-columns');
+            }
+
+            options.forEach(option => {
+                const btn = document.createElement('button');
+                btn.className = 'option-btn';
+                btn.textContent = option;
+                btn.onclick = () => checkAnswer(option, btn);
+                optionsDiv.appendChild(btn);
+            });
+        }
+
+        // Check answer
+        function checkAnswer(selected, btn) {
+            score.total++;
+            document.getElementById('total').textContent = score.total;
+
+            // Disable all buttons
+            document.querySelectorAll('.option-btn').forEach(b => b.disabled = true);
+
+            if (currentMode === 'verb-phrase') {
+                const verbData = verbPhraseData[currentVerb];
+                const isCorrect = selected === currentAnswer;
+
+                if (isCorrect) {
+                    score.correct++;
+                    btn.classList.add('correct');
+                    document.getElementById('feedback').textContent = '✓ Correct!';
+                    document.getElementById('feedback').className = 'feedback correct';
+
+                    // Add to answered correctly list
+                    answeredCorrectly['verb-phrase'].add(currentVerb);
+
+                    // Show example(s)
+                    if (selected === 'both') {
+                        document.getElementById('example-text').textContent =
+                            'Gerund: ' + verbData.gerund + '\nInfinitive: ' + verbData.infinitive;
+                    } else {
+                        document.getElementById('example-text').textContent = verbData[selected];
+                    }
+                    document.getElementById('example').classList.add('show');
+                } else {
+                    btn.classList.add('wrong');
+                    document.getElementById('feedback').textContent = '✗ Wrong!';
+                    document.getElementById('feedback').className = 'feedback wrong';
+
+                    // Remove from answered correctly list if it was there
+                    answeredCorrectly['verb-phrase'].delete(currentVerb);
+
+                    // Highlight correct answer
+                    document.querySelectorAll('.option-btn').forEach(b => {
+                        if (b.textContent === currentAnswer) {
+                            b.classList.add('correct');
+                        }
+                    });
+
+                    // Show correct example
+                    if (currentAnswer === 'both') {
+                        document.getElementById('example-text').textContent =
+                            'Gerund: ' + verbData.gerund + '\nInfinitive: ' + verbData.infinitive;
+                    } else {
+                        document.getElementById('example-text').textContent = verbData[currentAnswer];
+                    }
+                    document.getElementById('example').classList.add('show');
+                }
+            } else {
+                // Prepositions mode
+                if (selected === currentAnswer) {
+                    score.correct++;
+                    btn.classList.add('correct');
+                    document.getElementById('feedback').textContent = '✓ Correct!';
+                    document.getElementById('feedback').className = 'feedback correct';
+
+                    // Add to answered correctly list
+                    answeredCorrectly.prepositions.add(currentVerb);
+                } else {
+                    btn.classList.add('wrong');
+                    document.getElementById('feedback').textContent = '✗ Wrong!';
+                    document.getElementById('feedback').className = 'feedback wrong';
+
+                    // Remove from answered correctly list if it was there
+                    answeredCorrectly.prepositions.delete(currentVerb);
+
+                    // Highlight correct answer
+                    document.querySelectorAll('.option-btn').forEach(b => {
+                        if (b.textContent === currentAnswer) {
+                            b.classList.add('correct');
+                        }
+                    });
+                }
+
+                // Show example
+                document.getElementById('example-text').textContent = prepositionsData[currentVerb][currentAnswer];
+                document.getElementById('example').classList.add('show');
+            }
+
+            document.getElementById('correct').textContent = score.correct;
+            document.getElementById('next-btn').classList.add('show');
+        }
+
+        // Mode switching
+        document.querySelectorAll('.mode-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.mode-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                currentMode = btn.dataset.mode;
+                score = { correct: 0, total: 0 };
+                document.getElementById('correct').textContent = 0;
+                document.getElementById('total').textContent = 0;
+                // Don't reset answered correctly list when switching modes
+                startNewQuestion();
+            });
+        });
+
+        // Next button
+        document.getElementById('next-btn').addEventListener('click', startNewQuestion);
+
+        // Initialize game
+        loadData();
+    </script>
+</body>
+</html>

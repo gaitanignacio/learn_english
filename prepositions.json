@@ -1,0 +1,50 @@
+{
+    "feels": {
+        "like": "It feels like a good day to go for a walk."
+    },
+    "worried": {
+        "about": "She is worried about the upcoming exam."
+    },
+    "responsible": {
+        "for": "He is responsible for managing the team."
+    },
+    "nervous": {
+        "about": "They are nervous about the presentation."
+    },
+    "afraid": {
+        "of": "I am afraid of spiders."
+    },
+    "forgive": {
+        "for": "Please forgive me for being late."
+    },
+    "dream": {
+        "of": "She dreams of traveling the world."
+    },
+    "believe": {
+        "in": "He believes in working hard to achieve success."
+    },
+    "good": {
+        "at": "She is good at playing chess."
+    },
+    "excited": {
+        "about": "They are excited about the upcoming trip."
+    },
+    "looking forward": {
+        "to": "I am looking forward to meeting you."
+    },
+    "interested": {
+        "in": "He is interested in learning new languages."
+    },
+    "tired": {
+        "of": "She is tired of waiting."
+    },
+    "planning": {
+        "on": "We are planning on starting a new project."
+    },
+    "plan": {
+        "on": "They plan on attending the conference."
+    },
+    "insited": {
+        "on": "He insisted on paying for the meal."
+    }
+}

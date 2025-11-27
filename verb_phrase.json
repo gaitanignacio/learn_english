@@ -1,0 +1,118 @@
+{
+    "plan": {
+        "gerund": "I plan going to the party.",
+        "infinitive": "I plan to go to the party."
+    },
+    "practice": {
+        "gerund": "She practices playing the piano every day.",
+        "infinitive": null
+    },
+    "dislike": {
+        "gerund": "They dislike waiting in long lines.",
+        "infinitive": null
+    },
+    "decide": {
+        "gerund": null,
+        "infinitive": "We decided to take a trip to the mountains."
+    },
+    "enjoy": {
+        "gerund": "He enjoys hiking on weekends.",
+        "infinitive": null
+    },
+    "postpone": {
+        "gerund": "The meeting was postponed being held until next week.",
+        "infinitive": null
+    },
+    "learn": {
+        "gerund": null,
+        "infinitive": "She is learning to play the guitar."
+    },
+    "avoid": {
+        "gerund": "He avoids eating junk food.",
+        "infinitive": null
+    },
+    "come": {
+        "gerund": null,
+        "infinitive": "They came to see the new movie."
+    },
+    "continue": {
+        "gerund": "She continued working despite the noise.",
+        "infinitive": "He continued to explain his point."
+    },
+    "expect": {
+        "gerund": null,
+        "infinitive": "I expect to finish the project by Friday."
+    },
+    "advise": {
+        "gerund": "She advised taking the earlier train.",
+        "infinitive": null
+    },
+    "would like": {
+        "gerund": null,
+        "infinitive": "I would like to visit Paris someday."
+    },
+    "finish": {
+        "gerund": "They finished reading the book last night.",
+        "infinitive": null
+    },
+    "love": {
+        "gerund": "He loves swimming in the ocean.",
+        "infinitive": "I love to dance."
+    },
+    "can't stand": {
+        "gerund": "She can't stand waiting in traffic.",
+        "infinitive": "I can't stand to be late."
+    },
+    "deny": {
+        "gerund": "He denied stealing the money.",
+        "infinitive": null
+    },
+    "promise": {
+        "gerund": null,
+        "infinitive": "They promised to help us move."
+    },
+    "begin": {
+        "gerund": "She began singing when she was a child.",
+        "infinitive": "He began to understand the problem."
+    },
+    "start": {
+        "gerund": "They started working on the project early.",
+        "infinitive": "I started to learn Spanish last year."
+    },
+    "want": {
+        "gerund": null,
+        "infinitive": "She wants to become a doctor."
+    },
+    "consider": {
+        "gerund": "He is considering moving to a new city.",
+        "infinitive": null
+    },
+    "need": {
+        "gerund": null,
+        "infinitive": "You need to finish your homework."
+    },
+    "ask": {
+        "gerund": null,
+        "infinitive": "I asked to leave early."
+    },
+    "offer": {
+        "gerund": null,
+        "infinitive": "They offered to help with the preparations."
+    },
+    "agree": {
+        "gerund": null,
+        "infinitive": "We agreed to meet at noon."
+    },
+    "like": {
+        "gerund": "She likes reading historical novels.",
+        "infinitive": "He likes to play chess."
+    },
+    "wish": {
+        "gerund": null,
+        "infinitive": "I wish to speak with the manager."
+    },
+    "hate": {
+        "gerund": "They hate cleaning the house.",
+        "infinitive": "I hate to interrupt."
+    }
+}

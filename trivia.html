@@ -38,7 +38,8 @@
         }
 
         .mode-selector {
-            display: flex;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
             gap: 10px;
             margin-bottom: 30px;
         }
@@ -215,6 +216,7 @@
         <div class="mode-selector">
             <button class="mode-btn active" data-mode="prepositions">Prepositions</button>
             <button class="mode-btn" data-mode="verb-phrase">Verb Phrase</button>
+            <button class="mode-btn" data-mode="phrasal-verbs">Phrasal Verbs</button>
         </div>
 
         <div class="score">
@@ -240,11 +242,13 @@
 
         const verbPhraseData = {"plan":{"gerund":"I plan going to the party.","infinitive":"I plan to go to the party."},"practice":{"gerund":"She practices playing the piano every day.","infinitive":null},"dislike":{"gerund":"They dislike waiting in long lines.","infinitive":null},"decide":{"gerund":null,"infinitive":"We decided to take a trip to the mountains."},"enjoy":{"gerund":"He enjoys hiking on weekends.","infinitive":null},"postpone":{"gerund":"The meeting was postponed being held until next week.","infinitive":null},"learn":{"gerund":null,"infinitive":"She is learning to play the guitar."},"avoid":{"gerund":"He avoids eating junk food.","infinitive":null},"come":{"gerund":null,"infinitive":"They came to see the new movie."},"continue":{"gerund":"She continued working despite the noise.","infinitive":"He continued to explain his point."},"expect":{"gerund":null,"infinitive":"I expect to finish the project by Friday."},"advise":{"gerund":"She advised taking the earlier train.","infinitive":null},"would like":{"gerund":null,"infinitive":"I would like to visit Paris someday."},"finish":{"gerund":"They finished reading the book last night.","infinitive":null},"love":{"gerund":"He loves swimming in the ocean.","infinitive":"I love to dance."},"can't stand":{"gerund":"She can't stand waiting in traffic.","infinitive":"I can't stand to be late."},"deny":{"gerund":"He denied stealing the money.","infinitive":null},"promise":{"gerund":null,"infinitive":"They promised to help us move."},"begin":{"gerund":"She began singing when she was a child.","infinitive":"He began to understand the problem."},"start":{"gerund":"They started working on the project early.","infinitive":"I started to learn Spanish last year."},"want":{"gerund":null,"infinitive":"She wants to become a doctor."},"consider":{"gerund":"He is considering moving to a new city.","infinitive":null},"need":{"gerund":null,"infinitive":"You need to finish your homework."},"ask":{"gerund":null,"infinitive":"I asked to leave early."},"offer":{"gerund":null,"infinitive":"They offered to help with the preparations."},"agree":{"gerund":null,"infinitive":"We agreed to meet at noon."},"like":{"gerund":"She likes reading historical novels.","infinitive":"He likes to play chess."},"wish":{"gerund":null,"infinitive":"I wish to speak with the manager."},"hate":{"gerund":"They hate cleaning the house.","infinitive":"I hate to interrupt."},"prefer":{"gerund":"I prefer working in the morning.","infinitive":"She prefers to work alone."},"try":{"gerund":"He tried calling her several times.","infinitive":"They tried to fix the problem."},"stop":{"gerund":"Please stop making noise.","infinitive":"We stopped to rest for a while."},"remember":{"gerund":"I remember visiting that place as a child.","infinitive":"Remember to lock the door."},"forget":{"gerund":"I'll never forget meeting you.","infinitive":"Don't forget to call me."},"regret":{"gerund":"She regrets quitting her job.","infinitive":"We regret to inform you of the cancellation."},"suggest":{"gerund":"He suggested taking a different route.","infinitive":null},"mind":{"gerund":"Do you mind opening the window?","infinitive":null},"miss":{"gerund":"I miss spending time with my family.","infinitive":null},"admit":{"gerund":"He admitted making a mistake.","infinitive":null},"imagine":{"gerund":"Can you imagine living in another country?","infinitive":null},"recommend":{"gerund":"I recommend trying the new restaurant.","infinitive":null},"refuse":{"gerund":null,"infinitive":"She refused to answer the question."},"manage":{"gerund":null,"infinitive":"He managed to solve the problem."},"hope":{"gerund":null,"infinitive":"We hope to see you soon."},"intend":{"gerund":null,"infinitive":"I intend to finish this today."},"deserve":{"gerund":null,"infinitive":"You deserve to be happy."},"afford":{"gerund":null,"infinitive":"They can't afford to buy a new car."},"appear":{"gerund":null,"infinitive":"She appears to be confident."},"pretend":{"gerund":null,"infinitive":"He pretended to be asleep."}};
 
+        const phrasalVerbsData = {"Ask for":{"definition":"To request","example":"He asked for a cup of coffee."},"Back up":{"definition":"To support","example":"She backed up her friend during the argument."},"Blow up":{"definition":"To explode","example":"The bomb blew up in the middle of the street."},"Break down":{"definition":"To stop working","example":"My car broke down on the way home."},"Break up":{"definition":"To end a relationship","example":"They decided to break up after five years together."},"Bring about":{"definition":"To cause","example":"The new policy brought about significant changes."},"Bring in":{"definition":"To introduce","example":"They brought in a new manager to improve the team."},"Bring up":{"definition":"To mention","example":"She brought up an interesting point in the meeting."},"Call back":{"definition":"To return a call","example":"I'll call you back later."},"Call off":{"definition":"To cancel","example":"The meeting was called off due to bad weather."},"Call up":{"definition":"To call someone","example":"I'll call him up to confirm the meeting."},"Carry on":{"definition":"To continue","example":"Despite the challenges, he carried on with his project."},"Catch up":{"definition":"To reach someone's level","example":"She worked hard to catch up with the rest of the team."},"Check out":{"definition":"To examine","example":"We need to check out of the hotel by noon."},"Come across":{"definition":"To find by chance","example":"I came across my old photos while cleaning."},"Come back":{"definition":"To return","example":"She came back from vacation yesterday."},"Come out":{"definition":"To be released","example":"Her new book comes out next month."},"Come up with":{"definition":"To suggest","example":"We need to come up with a new plan."},"Cut back":{"definition":"To reduce","example":"We need to cut back on spending."},"Cut down":{"definition":"To reduce","example":"He needs to cut down on sugar."},"Cut off":{"definition":"To interrupt","example":"The phone call was cut off suddenly."},"Deal with":{"definition":"To handle","example":"She deals with customer complaints every day."},"Do without":{"definition":"To live without","example":"I can't do without my morning coffee."},"Dress up":{"definition":"To dress formally","example":"You don't need to dress up for the party."},"Drop by":{"definition":"To visit briefly","example":"I'll drop by your house later."},"Drop off":{"definition":"To take someone somewhere","example":"Can you drop me off at the station?"},"End up":{"definition":"To conclude","example":"He ended up going to the party alone."},"Figure out":{"definition":"To solve","example":"I can't figure out how to fix this."},"Fill out":{"definition":"To complete a form","example":"Please fill out this application form."},"Find out":{"definition":"To discover","example":"I found out she was moving away."},"Get along":{"definition":"To have a good relationship","example":"They get along very well."},"Get away":{"definition":"To escape","example":"We need to get away for the weekend."},"Get back":{"definition":"To return","example":"I'll get back to you on that."},"Get by":{"definition":"To manage","example":"We can get by with what we have."},"Get in":{"definition":"To arrive","example":"What time does your flight get in?"},"Get off":{"definition":"To leave","example":"I get off work at 5 PM."},"Get on":{"definition":"To board","example":"We need to get on the bus now."},"Get out":{"definition":"To leave","example":"Get out of here!"},"Get over":{"definition":"To recover","example":"It took her a long time to get over the flu."},"Get through":{"definition":"To succeed","example":"I finally got through the exam."},"Give away":{"definition":"To donate","example":"She gave away all her old clothes."},"Give back":{"definition":"To return","example":"Please give back my book."},"Give in":{"definition":"To surrender","example":"He gave in to the pressure."},"Give up":{"definition":"To quit","example":"Don't give up on your dreams."},"Go ahead":{"definition":"To proceed","example":"Go ahead and start without me."},"Go back":{"definition":"To return","example":"I have to go back to the office."},"Go down":{"definition":"To decrease","example":"Prices are going down this week."},"Go on":{"definition":"To continue","example":"The show must go on."},"Go over":{"definition":"To review","example":"Let's go over the details again."},"Go through":{"definition":"To experience","example":"She went through a tough time."},"Grow up":{"definition":"To mature","example":"He grew up in a small town."},"Hang out":{"definition":"To spend time","example":"We like to hang out at the mall."},"Hang up":{"definition":"To end a call","example":"She hung up before I could explain."},"Hold on":{"definition":"To wait","example":"Hold on a second, I'll be right back."},"Hold up":{"definition":"To delay","example":"Sorry I'm late; I was held up in traffic."},"Keep on":{"definition":"To continue","example":"Keep on trying, you'll succeed."},"Keep up":{"definition":"To maintain","example":"Keep up the good work!"},"Let down":{"definition":"To disappoint","example":"I hope I don't let you down."},"Let in":{"definition":"To allow entry","example":"Don't let anyone in without checking."},"Let out":{"definition":"To release","example":"She let out a loud scream."},"Look after":{"definition":"To care for","example":"She looks after her elderly parents."},"Look ahead":{"definition":"To plan for the future","example":"Let's look ahead to next year."},"Look around":{"definition":"To explore","example":"We looked around the city for hours."},"Look at":{"definition":"To observe","example":"Look at that beautiful painting."},"Look for":{"definition":"To search","example":"I'm looking for my keys."},"Look forward to":{"definition":"To anticipate","example":"I'm looking forward to the weekend."},"Look into":{"definition":"To investigate","example":"The police are looking into the matter."},"Look out":{"definition":"To be cautious","example":"Look out for cars when crossing."},"Look over":{"definition":"To examine","example":"Please look over the report before signing."},"Look up":{"definition":"To search for information","example":"Look up the word in the dictionary."},"Make out":{"definition":"To discern","example":"I can't make out what he's saying."},"Make up":{"definition":"To reconcile","example":"They made up after their argument."},"Make up for":{"definition":"To compensate","example":"I'll make up for the lost time."},"Move on":{"definition":"To proceed","example":"Let's move on to the next topic."},"Pass away":{"definition":"To die","example":"His grandfather passed away last night."},"Pass out":{"definition":"To faint","example":"She passed out from the heat."},"Pick up":{"definition":"To collect","example":"Can you pick up some groceries?"},"Pick out":{"definition":"To choose","example":"She picked out a dress for the party."},"Pick up on":{"definition":"To notice","example":"He picked up on her subtle hints."},"Point out":{"definition":"To indicate","example":"She pointed out the error in the report."},"Put away":{"definition":"To store","example":"Put away your toys when you're done."},"Put off":{"definition":"To postpone","example":"We had to put off the meeting."},"Put on":{"definition":"To wear","example":"She put on her jacket before leaving."},"Put out":{"definition":"To extinguish","example":"Please put out the fire."},"Put up with":{"definition":"To tolerate","example":"I can't put up with his behavior."},"Run into":{"definition":"To meet unexpectedly","example":"I ran into an old friend at the store."},"Run out of":{"definition":"To deplete","example":"We ran out of milk."},"Set up":{"definition":"To arrange","example":"They set up the equipment for the event."},"Show up":{"definition":"To arrive","example":"He didn't show up for the interview."},"Shut down":{"definition":"To close","example":"The factory shut down last year."},"Shut up":{"definition":"To be quiet","example":"Shut up and listen!"},"Stand by":{"definition":"To support","example":"I'll stand by you no matter what."},"Stand out":{"definition":"To be noticeable","example":"Her red dress made her stand out."},"Stand up":{"definition":"To rise","example":"Please stand up for the national anthem."},"Take after":{"definition":"To resemble","example":"She takes after her mother."},"Take apart":{"definition":"To disassemble","example":"He took apart the clock to fix it."},"Take off":{"definition":"To ascend","example":"The plane took off on time."},"Take on":{"definition":"To accept","example":"She took on the challenge."},"Take over":{"definition":"To assume control","example":"He took over the company after the merger."},"Take up":{"definition":"To begin","example":"She took up painting as a hobby."},"Talk over":{"definition":"To discuss","example":"Let's talk over the proposal."},"Tear down":{"definition":"To demolish","example":"They tore down the old building."},"Think over":{"definition":"To consider","example":"Think over my suggestion before deciding."},"Throw away":{"definition":"To discard","example":"Don't throw away that paper!"},"Throw up":{"definition":"To vomit","example":"He threw up after the roller coaster ride."},"Turn around":{"definition":"To reverse direction","example":"Turn around and go back the way you came."},"Turn down":{"definition":"To reject","example":"She turned down the job offer."},"Turn off":{"definition":"To deactivate","example":"Please turn off the lights when you leave."},"Turn on":{"definition":"To activate","example":"Turn on the TV to watch the game."},"Turn in":{"definition":"To submit","example":"Turn in your assignments by Friday."},"Turn out":{"definition":"To result","example":"It turned out to be a great day."},"Turn over":{"definition":"To flip","example":"Turn over the page to continue reading."},"Turn up":{"definition":"To increase","example":"Turn up the volume, I can't hear."},"Watch out":{"definition":"To be cautious","example":"Watch out for that car!"},"Work out":{"definition":"To exercise/ To resolve","example":"I work out at the gym every morning. / Everything worked out in the end."}};
+
         let currentMode = 'prepositions';
         let currentVerb = '';
         let currentAnswer = '';
         let score = { correct: 0, total: 0 };
-        let answeredCorrectly = { prepositions: new Set(), 'verb-phrase': new Set() };
+        let answeredCorrectly = { prepositions: new Set(), 'verb-phrase': new Set(), 'phrasal-verbs': new Set() };
 
         // Load JSON data
         function loadData() {
@@ -279,8 +283,10 @@
 
             if (currentMode === 'prepositions') {
                 loadPrepositionQuestion();
-            } else {
+            } else if (currentMode === 'verb-phrase') {
                 loadVerbPhraseQuestion();
+            } else {
+                loadPhrasalVerbQuestion();
             }
         }
 
@@ -346,6 +352,33 @@
             renderOptions(options);
         }
 
+        // Load phrasal verb question
+        function loadPhrasalVerbQuestion() {
+            // Filter out verbs that were answered correctly
+            const availableVerbs = Object.keys(phrasalVerbsData).filter(
+                verb => !answeredCorrectly['phrasal-verbs'].has(verb)
+            );
+
+            // If all verbs answered correctly, reset the list
+            if (availableVerbs.length === 0) {
+                answeredCorrectly['phrasal-verbs'].clear();
+                currentVerb = getRandomKey(phrasalVerbsData);
+            } else {
+                currentVerb = availableVerbs[Math.floor(Math.random() * availableVerbs.length)];
+            }
+
+            currentAnswer = phrasalVerbsData[currentVerb].definition;
+
+            // Get all definitions
+            const allDefinitions = Object.values(phrasalVerbsData).map(v => v.definition);
+
+            // Generate 4 random options including the correct one
+            const options = generateOptions(currentAnswer, allDefinitions);
+
+            document.getElementById('verb').textContent = currentVerb;
+            renderOptions(options);
+        }
+
         // Render option buttons
         function renderOptions(options) {
             const optionsDiv = document.getElementById('options');
@@ -375,7 +408,38 @@
             // Disable all buttons
             document.querySelectorAll('.option-btn').forEach(b => b.disabled = true);
 
-            if (currentMode === 'verb-phrase') {
+            if (currentMode === 'phrasal-verbs') {
+                const phrasalData = phrasalVerbsData[currentVerb];
+                const isCorrect = selected === currentAnswer;
+
+                if (isCorrect) {
+                    score.correct++;
+                    btn.classList.add('correct');
+                    document.getElementById('feedback').textContent = '✓ Correct!';
+                    document.getElementById('feedback').className = 'feedback correct';
+
+                    // Add to answered correctly list
+                    answeredCorrectly['phrasal-verbs'].add(currentVerb);
+                } else {
+                    btn.classList.add('wrong');
+                    document.getElementById('feedback').textContent = '✗ Wrong!';
+                    document.getElementById('feedback').className = 'feedback wrong';
+
+                    // Remove from answered correctly list if it was there
+                    answeredCorrectly['phrasal-verbs'].delete(currentVerb);
+
+                    // Highlight correct answer
+                    document.querySelectorAll('.option-btn').forEach(b => {
+                        if (b.textContent === currentAnswer) {
+                            b.classList.add('correct');
+                        }
+                    });
+                }
+
+                // Show example
+                document.getElementById('example-text').textContent = phrasalData.example;
+                document.getElementById('example').classList.add('show');
+            } else if (currentMode === 'verb-phrase') {
                 const verbData = verbPhraseData[currentVerb];
                 const isCorrect = selected === currentAnswer;
 

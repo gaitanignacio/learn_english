@@ -1,0 +1,386 @@
+{
+    "I don't like ___ of these options.": {
+        "answer": "either",
+        "explanation": "Use 'either' in negative sentences to mean 'one or the other'."
+    },
+    "___ of us wants to go to the party.": {
+        "answer": "Neither",
+        "explanation": "Use 'Neither' when both options are rejected (already negative)."
+    },
+    "You can choose ___ the red or the blue shirt.": {
+        "answer": "either",
+        "explanation": "Use 'either' to offer a choice between two options."
+    },
+    "___ John nor Mary is coming to dinner.": {
+        "answer": "Neither",
+        "explanation": "Use 'Neither...nor' to express that both are not true."
+    },
+    "I don't want ___ of those desserts.": {
+        "answer": "either",
+        "explanation": "Use 'either' in negative sentences with 'of'."
+    },
+    "___ option sounds good to me.": {
+        "answer": "Either",
+        "explanation": "Use 'Either' when both options are acceptable."
+    },
+    "She doesn't speak ___ French or German.": {
+        "answer": "either",
+        "explanation": "Use 'either...or' in negative sentences."
+    },
+    "___ of the students passed the exam.": {
+        "answer": "Neither",
+        "explanation": "Use 'Neither' when referring to zero out of two."
+    },
+    "I can meet you on ___ Monday or Tuesday.": {
+        "answer": "either",
+        "explanation": "Use 'either...or' to give two options."
+    },
+    "___ team played well in the match.": {
+        "answer": "Neither",
+        "explanation": "Use 'Neither' when both options failed."
+    },
+    "You can take ___ route to get there.": {
+        "answer": "either",
+        "explanation": "Use 'either' when both choices lead to the same result."
+    },
+    "I haven't seen ___ of them today.": {
+        "answer": "either",
+        "explanation": "Use 'either' in negative sentences."
+    },
+    "___ answer is correct.": {
+        "answer": "Neither",
+        "explanation": "Use 'Neither' when both options are wrong."
+    },
+    "___ book is interesting enough to read.": {
+        "answer": "Either",
+        "explanation": "Use 'Either' when both options are satisfactory."
+    },
+    "He won't eat ___ vegetables or fruits.": {
+        "answer": "either",
+        "explanation": "Use 'either...or' in negative contexts."
+    },
+    "___ of my parents likes spicy food.": {
+        "answer": "Neither",
+        "explanation": "Use 'Neither' when both reject something."
+    },
+    "We can go ___ by train or by bus.": {
+        "answer": "either",
+        "explanation": "Use 'either...or' to present alternatives."
+    },
+    "___ candidate was suitable for the job.": {
+        "answer": "Neither",
+        "explanation": "Use 'Neither' when both fail to meet criteria."
+    },
+    "I don't like ___ coffee or tea.": {
+        "answer": "either",
+        "explanation": "Use 'either...or' in negative sentences."
+    },
+    "___ of us knows the answer.": {
+        "answer": "Neither",
+        "explanation": "Use 'Neither' when both lack knowledge."
+    },
+    "You can sit in ___ chair.": {
+        "answer": "either",
+        "explanation": "Use 'either' when both options are available."
+    },
+    "___ restaurant serves vegetarian food.": {
+        "answer": "Neither",
+        "explanation": "Use 'Neither' when both lack something."
+    },
+    "I'm not interested in ___ of those movies.": {
+        "answer": "either",
+        "explanation": "Use 'either' with 'not' to reject both."
+    },
+    "___ solution will work for this problem.": {
+        "answer": "Either",
+        "explanation": "Use 'Either' when both are viable."
+    },
+    "She can't afford ___ the car or the motorcycle.": {
+        "answer": "either",
+        "explanation": "Use 'either...or' in negative contexts."
+    },
+    "___ player scored a goal.": {
+        "answer": "Neither",
+        "explanation": "Use 'Neither' when both failed to achieve."
+    },
+    "Take ___ path, they both lead to the lake.": {
+        "answer": "either",
+        "explanation": "Use 'either' when both choices are equivalent."
+    },
+    "___ of them speaks English.": {
+        "answer": "Neither",
+        "explanation": "Use 'Neither' when both lack an ability."
+    },
+    "I don't trust ___ of those sources.": {
+        "answer": "either",
+        "explanation": "Use 'either' in negative statements."
+    },
+    "___ method is effective.": {
+        "answer": "Neither",
+        "explanation": "Use 'Neither' when both are ineffective."
+    },
+    "You can use ___ pen.": {
+        "answer": "either",
+        "explanation": "Use 'either' when offering a choice."
+    },
+    "___ hotel has availability for tonight.": {
+        "answer": "Neither",
+        "explanation": "Use 'Neither' when both are unavailable."
+    },
+    "I won't accept ___ excuse.": {
+        "answer": "either",
+        "explanation": "Use 'either' with 'won't' (negative)."
+    },
+    "___ story is believable.": {
+        "answer": "Neither",
+        "explanation": "Use 'Neither' when rejecting both."
+    },
+    "___ day works for me.": {
+        "answer": "Either",
+        "explanation": "Use 'Either' when both are acceptable."
+    },
+    "He doesn't want ___ the job or the promotion.": {
+        "answer": "either",
+        "explanation": "Use 'either...or' with negatives."
+    },
+    "___ of the twins is tall.": {
+        "answer": "Neither",
+        "explanation": "Use 'Neither' when both lack a characteristic."
+    },
+    "You can order ___ dish from the menu.": {
+        "answer": "either",
+        "explanation": "Use 'either' when both choices are allowed."
+    },
+    "___ phone is working properly.": {
+        "answer": "Neither",
+        "explanation": "Use 'Neither' when both are broken."
+    },
+    "I don't need ___ help or advice.": {
+        "answer": "either",
+        "explanation": "Use 'either...or' in negative contexts."
+    },
+    "___ of us is ready to leave.": {
+        "answer": "Neither",
+        "explanation": "Use 'Neither' when both are not ready."
+    },
+    "We can watch ___ movie tonight.": {
+        "answer": "either",
+        "explanation": "Use 'either' when both options are fine."
+    },
+    "___ explanation makes sense.": {
+        "answer": "Neither",
+        "explanation": "Use 'Neither' when both are unclear."
+    },
+    "I can't find ___ of my keys.": {
+        "answer": "either",
+        "explanation": "Use 'either' with 'can't' (negative)."
+    },
+    "___ of the shops is open on Sunday.": {
+        "answer": "Neither",
+        "explanation": "Use 'Neither' when both are closed."
+    },
+    "___ color looks good on you.": {
+        "answer": "Either",
+        "explanation": "Use 'Either' when both are complimentary."
+    },
+    "She won't choose ___ option.": {
+        "answer": "either",
+        "explanation": "Use 'either' with 'won't' (negative)."
+    },
+    "___ road is safe to drive on.": {
+        "answer": "Neither",
+        "explanation": "Use 'Neither' when both are unsafe."
+    },
+    "You can call me at ___ number.": {
+        "answer": "either",
+        "explanation": "Use 'either' when both numbers work."
+    },
+    "___ suggestion was helpful.": {
+        "answer": "Neither",
+        "explanation": "Use 'Neither' when both failed to help."
+    },
+    "I don't remember ___ of their names.": {
+        "answer": "either",
+        "explanation": "Use 'either' in negative statements."
+    },
+    "___ apartment is big enough for us.": {
+        "answer": "Neither",
+        "explanation": "Use 'Neither' when both are too small."
+    },
+    "___ size will fit you.": {
+        "answer": "Either",
+        "explanation": "Use 'Either' when both are suitable."
+    },
+    "He can't speak ___ Spanish or Italian.": {
+        "answer": "either",
+        "explanation": "Use 'either...or' with negatives."
+    },
+    "___ witness saw the accident.": {
+        "answer": "Neither",
+        "explanation": "Use 'Neither' when both didn't see it."
+    },
+    "You may use ___ entrance.": {
+        "answer": "either",
+        "explanation": "Use 'either' when both entrances are allowed."
+    },
+    "___ computer is fast enough.": {
+        "answer": "Neither",
+        "explanation": "Use 'Neither' when both are too slow."
+    },
+    "I won't buy ___ of those shirts.": {
+        "answer": "either",
+        "explanation": "Use 'either' with 'won't' (negative)."
+    },
+    "___ of the restaurants serves breakfast.": {
+        "answer": "Neither",
+        "explanation": "Use 'Neither' when both don't offer it."
+    },
+    "___ time is convenient for me.": {
+        "answer": "Either",
+        "explanation": "Use 'Either' when both times work."
+    },
+    "She doesn't like ___ cats or dogs.": {
+        "answer": "either",
+        "explanation": "Use 'either...or' in negative contexts."
+    },
+    "___ of the reports is accurate.": {
+        "answer": "Neither",
+        "explanation": "Use 'Neither' when both are inaccurate."
+    },
+    "Take ___ seat, they're both available.": {
+        "answer": "either",
+        "explanation": "Use 'either' when offering a choice."
+    },
+    "___ plan will succeed.": {
+        "answer": "Neither",
+        "explanation": "Use 'Neither' when predicting both will fail."
+    },
+    "I can't afford ___ of those houses.": {
+        "answer": "either",
+        "explanation": "Use 'either' with 'can't' (negative)."
+    },
+    "___ of my sisters lives in Paris.": {
+        "answer": "Neither",
+        "explanation": "Use 'Neither' when both live elsewhere."
+    },
+    "___ password should work.": {
+        "answer": "Either",
+        "explanation": "Use 'Either' when both are valid."
+    },
+    "He won't attend ___ meeting.": {
+        "answer": "either",
+        "explanation": "Use 'either' with 'won't' (negative)."
+    },
+    "___ device is compatible with the software.": {
+        "answer": "Neither",
+        "explanation": "Use 'Neither' when both are incompatible."
+    },
+    "You can borrow ___ book.": {
+        "answer": "either",
+        "explanation": "Use 'either' when both are available to borrow."
+    },
+    "___ excuse is valid.": {
+        "answer": "Neither",
+        "explanation": "Use 'Neither' when rejecting both excuses."
+    },
+    "I don't recognize ___ of these faces.": {
+        "answer": "either",
+        "explanation": "Use 'either' with 'don't' (negative)."
+    },
+    "___ of the answers is correct.": {
+        "answer": "Neither",
+        "explanation": "Use 'Neither' when both are wrong."
+    },
+    "___ location is perfect for the event.": {
+        "answer": "Either",
+        "explanation": "Use 'Either' when both locations are suitable."
+    },
+    "She can't decide on ___ option.": {
+        "answer": "either",
+        "explanation": "Use 'either' with 'can't' (negative)."
+    },
+    "___ student completed the assignment.": {
+        "answer": "Neither",
+        "explanation": "Use 'Neither' when both failed to complete it."
+    },
+    "We can meet on ___ Tuesday or Wednesday.": {
+        "answer": "either",
+        "explanation": "Use 'either...or' to offer two days."
+    },
+    "___ theory explains the phenomenon.": {
+        "answer": "Neither",
+        "explanation": "Use 'Neither' when both theories fail."
+    },
+    "I don't want ___ soup or salad.": {
+        "answer": "either",
+        "explanation": "Use 'either...or' in negative sentences."
+    },
+    "___ of them is qualified.": {
+        "answer": "Neither",
+        "explanation": "Use 'Neither' when both lack qualifications."
+    },
+    "You can keep ___ receipt.": {
+        "answer": "either",
+        "explanation": "Use 'either' when both can be kept."
+    },
+    "___ flight has available seats.": {
+        "answer": "Neither",
+        "explanation": "Use 'Neither' when both are fully booked."
+    },
+    "He doesn't play ___ guitar or piano.": {
+        "answer": "either",
+        "explanation": "Use 'either...or' with negatives."
+    },
+    "___ of the keys fits the lock.": {
+        "answer": "Neither",
+        "explanation": "Use 'Neither' when both keys don't work."
+    },
+    "___ way is fine with me.": {
+        "answer": "Either",
+        "explanation": "Use 'Either' when both ways are acceptable."
+    },
+    "I won't visit ___ city this summer.": {
+        "answer": "either",
+        "explanation": "Use 'either' with 'won't' (negative)."
+    },
+    "___ of the contestants won the prize.": {
+        "answer": "Neither",
+        "explanation": "Use 'Neither' when both lost."
+    },
+    "You can choose ___ dessert.": {
+        "answer": "either",
+        "explanation": "Use 'either' when offering a choice."
+    },
+    "___ argument is convincing.": {
+        "answer": "Neither",
+        "explanation": "Use 'Neither' when both fail to convince."
+    },
+    "I can't decide on ___ of the offers.": {
+        "answer": "either",
+        "explanation": "Use 'either' with 'can't' (negative)."
+    },
+    "___ of the doctors is available today.": {
+        "answer": "Neither",
+        "explanation": "Use 'Neither' when both are unavailable."
+    },
+    "___ solution will solve the issue.": {
+        "answer": "Either",
+        "explanation": "Use 'Either' when both solutions work."
+    },
+    "She won't wear ___ dress.": {
+        "answer": "either",
+        "explanation": "Use 'either' with 'won't' (negative)."
+    },
+    "___ version is the latest one.": {
+        "answer": "Neither",
+        "explanation": "Use 'Neither' when both are outdated."
+    },
+    "You can pick ___ apple from the basket.": {
+        "answer": "either",
+        "explanation": "Use 'either' when both apples are available."
+    },
+    "___ proposal was accepted.": {
+        "answer": "Neither",
+        "explanation": "Use 'Neither' when both were rejected."
+    }
+}
